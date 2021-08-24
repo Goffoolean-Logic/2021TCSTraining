@@ -1,0 +1,27 @@
+.ShoppingList > div{
+    border: 1px solid;
+    padding: 10px;
+    
+}
+
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #000000;
+    padding: 150px;
+}
+
+.container2{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #000000;
+    padding: 80px;
+}
+
+.Refreshbut{
+    margin: 50px;
+}
