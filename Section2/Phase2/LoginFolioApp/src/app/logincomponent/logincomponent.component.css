@@ -1,0 +1,9 @@
+body{
+    background-color: chocolate;
+    border: solid;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    display: flex;
+    min-height: 100vh;
+}
