@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+</head>
+<body>
+    <div class = "container">
+        <div class = "formside">
+            <form>
+                <label>ID: </label>
+                <input type="text"/><br/>
+                <label>Name </label>
+                <input type = "text"/><br/><br/>
+                <label>Task </label><br/>
+                <textarea id="Task" rows="4" cols="30"></textarea><br/><br/>
+                <label>Completed </label>
+                <input type = "radio"/>
+                <label>Yes</label>
+                <input type = "radio"/>
+                <label>No</label>
+                <br/>
+                <input type = "button" value="Add Task" (click)="callService()">
+            </form>
+            
+
+        </div>
+        <div class = "tableside">
+            <div *ngIf="flag">
+                <table border="1">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Task</th>
+                        <th>Completed</th>
+                    </tr>
+                    <tr *ngFor="let task of TaskData">   
+                        <td>{{task.id}}</td>
+                        <td>{{task.userId}}</td>
+                        <td>{{task.title}}</td>
+                        <td>{{task.completed}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
