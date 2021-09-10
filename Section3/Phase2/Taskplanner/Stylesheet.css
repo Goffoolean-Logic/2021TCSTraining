@@ -1,0 +1,33 @@
+label{
+    text-decoration: underline;
+}
+
+body{
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+.Mbigdiv{
+    margin:5px;
+    padding: 5px;
+    border: solid;
+}
+
+.bigdiv{
+    margin:5px;
+    padding: 5px;
+    border: solid;
+}
+
+.Lbigdiv{
+    margin:5px;
+    padding: 5px;
+    border: solid;
+}
+
+button{
+    margin: 5px;
+}
+
