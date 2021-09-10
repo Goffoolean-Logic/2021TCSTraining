@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        let ws = new WebSocket("ws://localhost:9090");
+    
+        //open the connecton 
+        ws.onopen= ()=> {
+            // send data to web socket server application
+
+            timer = ()=>{
+                var today = new Date();
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                var yyyy = today.getFullYear();
+
+                return today = mm + '/' + dd + '/' + yyyy;
+            }
+
+            info = ()=> {
+                let name = document.getElementById("name").value;
+                let msg = document.getElementById("dd").value;
+                ws.send(msg);
+                document.getElementById("dd").value="";
+                document.getElementById("chatarea").innerHTML += "<h5>(" + timer() + ") " + name + ": "+ msg + "</h5>";
+                
+            }
+        }
+        // receive the messag from server application 
+        ws.onmessage = (msg)=> {
+            console.log(msg.data);
+            document.getElementById("chatarea").innerHTML += "<h5>(" + timer() + ") " + "Steve" + ": "+ msg.data + "</h5>";
+
+        }
+        </script>
+</head>
+<body>
+    <div>
+        <div>
+            <label>Name: </label>
+            <input type = text id="name"><br>
+            <label>Message:</label>
+            <textarea id="dd"></textarea>
+            <input type="Submit" value="Send" onclick="info()">
+        </div>
+        <div id="chatarea">
+
+        </div>
+    </div>
+</body>
+</html>
