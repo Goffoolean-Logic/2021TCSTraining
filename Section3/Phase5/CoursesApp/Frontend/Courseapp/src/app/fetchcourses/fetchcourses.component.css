@@ -1,0 +1,19 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color:rgb(86, 255, 80);
+}
+.Maindiv{
+    border: solid coral;
+    padding: 50px;
+    width: 50vh;
+    background-color: white;
+    overflow: scroll;
+}
+
+table, th, td{
+    border:1px solid black;
+}
